@@ -8,7 +8,6 @@ import ArtModal from './gallery/ArtModal';
 class ArtGallery extends Component {
   constructor(props){
     super(props);
-    console.log('properties', props);
     this.state = {
       artwork:[],
       loaded: false,
@@ -19,8 +18,6 @@ class ArtGallery extends Component {
     };
 
     this.loadArtwork = this.loadArtwork.bind(this);
-    // this.handlePaginationSelct = this.handlePaginationSelct.bind(this);
-    // this.handleLimitChange = this.handleLimitChange.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
 
@@ -31,20 +28,18 @@ class ArtGallery extends Component {
     // When you first make req, it will get something back, in a period of time, and be prepared to do something
     //when it comes
     //.then -> once req is given a response from api, do something with it (response)
-    console.log('what is url', url);
+
 
     fetch(url).then(response => {
 
       return response.json()
     }).then(returnedArt => {
       console.log('returned list', returnedArt);
-      // let pages = Math.round(returnedArt.results.length / this.state.limit);
       this.setState({
         artwork: returnedArt.results,
         loaded: true
 
       });
-    // console.log('this state', this.state);
     }).catch(ex => {
       console.log('parsing failed', ex);
     })
