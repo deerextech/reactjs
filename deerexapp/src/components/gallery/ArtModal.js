@@ -3,7 +3,7 @@ import {Modal} from 'react-bootstrap/lib/';
 import ArtInfo from './ArtInfo';
 
 const ArtModal = ({handleOpenModal, showModal, handleCloseModal, selectedArt}) => {
-  console.log('selected art', selectedArt)
+
   return(
     <div>
 
