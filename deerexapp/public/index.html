@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="App.css">
+    <!-- <script type="text/javascript" src="instafeed.js"></script> -->
+
+    <title>DeerexArt</title>
+  </head>
+  <script language="JavaScript">
+
+  document.oncontextmenu = context_menu;
+
+  function context_menu(e) {
+    console.log('i happen');
+      if (!e) var e = window.event;
+      var eTarget = (window.event) ? e.srcElement : e.target;
+
+      if (eTarget.nodeName == "IMG") {
+          //context menu attempt on top of an image element
+          return false;
+      }
+  }
+
+  </script>
+  <body >
+
+
+  <div id="root"></div>
+
+  <script src="bundle.js"></script>
+
+
+  </body>
+
+
+</html>
